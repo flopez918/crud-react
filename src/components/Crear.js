@@ -54,7 +54,7 @@ class Crear extends React.Component {
                         </div>
                         <div className="mb-3">
                             <label htmlFor="" className="form-label">Correo</label>
-                            <input type="text" name="correo" onChange={this.cambioValor} id="correo" value={correo} className="form-control" placeholder="" aria-describedby="helpId" />
+                            <input type="email" name="correo" onChange={this.cambioValor} id="correo" value={correo} className="form-control" placeholder="" aria-describedby="helpId" />
                             <small id="helpId" className="text-muted">Digite correo</small>
                         </div>
 
@@ -65,7 +65,7 @@ class Crear extends React.Component {
                     </form>
                 </div>
                 <div className="card-footer text-muted">
-
+                    Footer
                 </div>
             </div>
 

@@ -10,6 +10,17 @@ class Listar extends React.Component {
         }
     }
 
+    borrarRegistros = (id) => {
+        console.log(id);
+        fetch("http://localhost:8090/empleados/?borrar=" + id)
+            .then(respuesta => respuesta.json())
+            .then((datosRespuesta) => {
+                console.log(datosRespuesta)
+                this.cargarDatos();
+            })
+            .catch(console.log)
+    }
+
     cargarDatos() {
         fetch("http://localhost:8090/empleados/")
             .then(respuesta => respuesta.json())
@@ -56,8 +67,8 @@ class Listar extends React.Component {
                                             <td>{empleado.correo}</td>
                                             <td>
                                                 <div className="btn-group" role="group" aria-label="">
-                                                    <Link className="btn btn-warning" to={"/editar"}>Editar</Link>
-                                                    <Link className="btn btn-danger" to={"#"}>Borrar</Link>
+                                                    <Link className="btn btn-warning" to={"/editar/" + empleado.id}>Editar</Link>
+                                                    <button type="button" className="btn btn-danger" onClick={(() => this.borrarRegistros(empleado.id))}>Borrar</button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -67,9 +78,9 @@ class Listar extends React.Component {
                         </table>
                     </div>
                     <div className="card-footer text-muted">
-
+                        Footer
                     </div>
-                </div>
+                </div >
 
 
             );
