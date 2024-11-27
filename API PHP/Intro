@@ -1,0 +1,3 @@
+Esta API tiene las opciones de: insertar, consultar, actualizar, eliminar un EMPLEADO.
+Se pasa API en PHP y archivo SQL con dos empleados.
+Para su funcionamiento se debe instalar apache y mysql en su computador.
